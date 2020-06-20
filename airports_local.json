@@ -1,0 +1,23 @@
+[
+  {
+    "destination": "Cracow",
+    "departure": 12.45,
+    "arrival": 14.34,
+    "price": "278 PLN",
+    "date": "22/06/2020"
+  },
+  {
+    "destination": "Barcelona",
+    "departure": 18.56,
+    "arrival": 19.56,
+    "price": "930 PLN",
+    "date": "26/06/2020"
+  },
+  {
+    "destination": "New York",
+    "departure": 16.56,
+    "arrival": 20.33,
+    "price": "1534 PLN",
+    "date": "05/07/2020"
+  }
+]

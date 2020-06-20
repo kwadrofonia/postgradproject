@@ -1,0 +1,156 @@
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Code Pro', monospace;
+    background: url("lake.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+} 
+
+.background-color {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 90%;
+    transform: translate(-50%, -50%);
+    background-color: #717C89;
+    overflow: scroll;
+    z-index: 1;
+    opacity: 0.9;
+    text-align: center;
+    
+}
+
+.container {
+    width: 100%;
+    max-width: 98rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+    grid-gap: 2.5em;
+}
+
+.activities-grid-item {
+    height: 20em;
+    padding: 5em;
+    background-color: #fafafa;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.planeIcons {
+    max-width: 4em;
+    max-height: 4em;
+}
+
+.background-color-second {
+    position: absolute;
+    top: 70%;
+    left: 70%;
+    width: 90%;
+    height: 90%;
+    transform: translate(-50%, -50%);
+    background-color: cadetblue;
+    overflow: scroll;
+    z-index: 1;
+    opacity: 0.7;
+    text-align: center;
+}
+
+ .bookedSeatColor {
+     background-color: blue;
+ }
+
+ #seat {
+     background-color: chocolate;
+ }
+
+ .bg-red {
+     fill: red;
+ }
+
+ .plane {
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 132px;
+    background: #ccc;
+    align-items: center;
+    margin: 50px auto;
+  }
+
+  .secondPlane {
+    display:grid;
+    grid-template-columns: repeat(7, 1fr);
+    width: 200px;
+    background: #ccc;
+    margin: 50px auto;
+  }
+
+  .thirdPlane {
+    display:grid;
+    grid-template-columns: repeat(11, 1fr);
+    width: 400px;
+    background: #ccc;
+    margin: 50px auto;
+  }
+
+  .seats {
+    width:20px;
+    height:20px;
+    border: 1px solid black;
+    margin: 2px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .emptyPlace {
+    background: transparent;
+    width:10px;
+    height:20px;
+    margin: 2px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .dest {
+      margin: 30px auto;
+  }
+
+  .hiddenPlane {
+      visibility: hidden;
+      display: none;
+  }
+ 
+  @media only screen and (max-width: 800px) {
+
+    .activities-grid {
+        display: flex;
+        gap: 10em;
+        flex-direction: column;
+    } 
+    
+    .activities-grid-item {
+        height: 20em;
+        padding: 3em;
+        margin-top: 2em;
+        background-color: #fafafa;
+        position: relative;
+        flex-direction: column;
+        justify-content: space-around;
+        cursor: pointer;
+        z-index: 1;
+    }
+}

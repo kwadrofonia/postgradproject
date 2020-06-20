@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlyU - Fly with us!</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="./../assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;1,600&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <button onclick="getSession()">Check your session</button>
+    <div class="background-color">
+      <section class="container">
+        <div class="experience-outdoors">
+          <div class="title-heading">
+            <h3 class="dest">Choose your destination:</h3>
+          </div>
+          <div class="activities-grid">
+            <!-- grid item #1 -->
+            <div class="activities-grid-item first-dest">
+              <h2 id="output"></h2>
+              <h4 id="dateFirstTrip"></h4>
+              <div class="hour-container"><svg aria-hidden="true" class="planeIcons" focusable="false" data-prefix="fas"
+                  data-icon="plane-departure" class="svg-inline--fa fa-plane-departure fa-w-20" role="img"
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                  <path fill="currentColor"
+                    d="M624 448H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h608c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM80.55 341.27c6.28 6.84 15.1 10.72 24.33 10.71l130.54-.18a65.62 65.62 0 0 0 29.64-7.12l290.96-147.65c26.74-13.57 50.71-32.94 67.02-58.31 18.31-28.48 20.3-49.09 13.07-63.65-7.21-14.57-24.74-25.27-58.25-27.45-29.85-1.94-59.54 5.92-86.28 19.48l-98.51 49.99-218.7-82.06a17.799 17.799 0 0 0-18-1.11L90.62 67.29c-10.67 5.41-13.25 19.65-5.17 28.53l156.22 98.1-103.21 52.38-72.35-36.47a17.804 17.804 0 0 0-16.07.02L9.91 230.22c-10.44 5.3-13.19 19.12-5.57 28.08l76.21 82.97z">
+                  </path>
+                </svg>
+                <svg aria-hidden="true" class="planeIcons" focusable="false" data-prefix="fas" data-icon="plane-arrival"
+                  class="svg-inline--fa fa-plane-arrival fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 640 512">
+                  <path fill="currentColor"
+                    d="M624 448H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h608c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM44.81 205.66l88.74 80a62.607 62.607 0 0 0 25.47 13.93l287.6 78.35c26.48 7.21 54.56 8.72 81 1.36 29.67-8.27 43.44-21.21 47.25-35.71 3.83-14.5-1.73-32.71-23.37-54.96-19.28-19.82-44.35-32.79-70.83-40l-97.51-26.56L282.8 30.22c-1.51-5.81-5.95-10.35-11.66-11.91L206.05.58c-10.56-2.88-20.9 5.32-20.71 16.44l47.92 164.21-102.2-27.84-27.59-67.88c-1.93-4.89-6.01-8.57-11.02-9.93L52.72 64.75c-10.34-2.82-20.53 5-20.72 15.88l.23 101.78c.19 8.91 6.03 17.34 12.58 23.25z">
+                  </path>
+                </svg>
+                <h4 id="output2"></h4>
+                <h3 id="priceFirstTrip"></h3>
+                <button id="btnFirstTrip">Choose</button>
+              </div>
+            </div>
+            <!-- grid item #2 -->
+            <div class="activities-grid-item first-dest">
+              <h2 id="secondTrip"></h2>
+              <h4 id="dateSecondTrip"></h4>
+
+              <div class="hour-container"><svg aria-hidden="true" focusable="false" class="planeIcons" data-prefix="fas"
+                  data-icon="plane-departure" class="svg-inline--fa fa-plane-departure fa-w-20" role="img"
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                  <path fill="currentColor"
+                    d="M624 448H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h608c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM80.55 341.27c6.28 6.84 15.1 10.72 24.33 10.71l130.54-.18a65.62 65.62 0 0 0 29.64-7.12l290.96-147.65c26.74-13.57 50.71-32.94 67.02-58.31 18.31-28.48 20.3-49.09 13.07-63.65-7.21-14.57-24.74-25.27-58.25-27.45-29.85-1.94-59.54 5.92-86.28 19.48l-98.51 49.99-218.7-82.06a17.799 17.799 0 0 0-18-1.11L90.62 67.29c-10.67 5.41-13.25 19.65-5.17 28.53l156.22 98.1-103.21 52.38-72.35-36.47a17.804 17.804 0 0 0-16.07.02L9.91 230.22c-10.44 5.3-13.19 19.12-5.57 28.08l76.21 82.97z">
+                  </path>
+                </svg>
+                <svg aria-hidden="true" focusable="false" class="planeIcons" data-prefix="fas" data-icon="plane-arrival"
+                  class="svg-inline--fa fa-plane-arrival fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 640 512">
+                  <path fill="currentColor"
+                    d="M624 448H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h608c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM44.81 205.66l88.74 80a62.607 62.607 0 0 0 25.47 13.93l287.6 78.35c26.48 7.21 54.56 8.72 81 1.36 29.67-8.27 43.44-21.21 47.25-35.71 3.83-14.5-1.73-32.71-23.37-54.96-19.28-19.82-44.35-32.79-70.83-40l-97.51-26.56L282.8 30.22c-1.51-5.81-5.95-10.35-11.66-11.91L206.05.58c-10.56-2.88-20.9 5.32-20.71 16.44l47.92 164.21-102.2-27.84-27.59-67.88c-1.93-4.89-6.01-8.57-11.02-9.93L52.72 64.75c-10.34-2.82-20.53 5-20.72 15.88l.23 101.78c.19 8.91 6.03 17.34 12.58 23.25z">
+                  </path>
+                </svg>
+                <h4 id="secondTripDep">
+                  <h4>
+                    <h3 id="priceSecondTrip"></h3>
+                    <button id="btnSecondTrip">Choose</button>
+
+              </div>
+            </div>
+            <!-- grid item #3 -->
+            <div class="activities-grid-item third-dest">
+              <h2 id="thirdTrip"></h2>
+              <h4 id="dateThirdTrip"></h4>
+
+              <div class="hour-container"><svg aria-hidden="true" focusable="false" class="planeIcons" data-prefix="fas"
+                  data-icon="plane-departure" class="svg-inline--fa fa-plane-departure fa-w-20" role="img"
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                  <path fill="currentColor"
+                    d="M624 448H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h608c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM80.55 341.27c6.28 6.84 15.1 10.72 24.33 10.71l130.54-.18a65.62 65.62 0 0 0 29.64-7.12l290.96-147.65c26.74-13.57 50.71-32.94 67.02-58.31 18.31-28.48 20.3-49.09 13.07-63.65-7.21-14.57-24.74-25.27-58.25-27.45-29.85-1.94-59.54 5.92-86.28 19.48l-98.51 49.99-218.7-82.06a17.799 17.799 0 0 0-18-1.11L90.62 67.29c-10.67 5.41-13.25 19.65-5.17 28.53l156.22 98.1-103.21 52.38-72.35-36.47a17.804 17.804 0 0 0-16.07.02L9.91 230.22c-10.44 5.3-13.19 19.12-5.57 28.08l76.21 82.97z">
+                  </path>
+                </svg>
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" class="planeIcons" data-icon="plane-arrival"
+                  class="svg-inline--fa fa-plane-arrival fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 640 512">
+                  <path fill="currentColor"
+                    d="M624 448H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h608c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM44.81 205.66l88.74 80a62.607 62.607 0 0 0 25.47 13.93l287.6 78.35c26.48 7.21 54.56 8.72 81 1.36 29.67-8.27 43.44-21.21 47.25-35.71 3.83-14.5-1.73-32.71-23.37-54.96-19.28-19.82-44.35-32.79-70.83-40l-97.51-26.56L282.8 30.22c-1.51-5.81-5.95-10.35-11.66-11.91L206.05.58c-10.56-2.88-20.9 5.32-20.71 16.44l47.92 164.21-102.2-27.84-27.59-67.88c-1.93-4.89-6.01-8.57-11.02-9.93L52.72 64.75c-10.34-2.82-20.53 5-20.72 15.88l.23 101.78c.19 8.91 6.03 17.34 12.58 23.25z">
+                  </path>
+                </svg>
+                <h4 id="thirdTripDep">
+                  <h4>
+                    <h3 id="priceThirdTrip"></h3>
+                    <button id="btnThirdTrip">Choose</button>
+
+
+              </div>
+
+            </div>
+          </div>
+      </section>
+
+      <section class="container">
+        <div class="experience-outdoors-seats">
+          <div class="title-heading">
+            <h3 class="dest">Choose your seat</h3>
+            <p>Green seats - Business class (+250 PLN to the standard price of the ticket)</p>
+            <div class="plane hiddenPlane" id="plane"></div>
+            <br>
+            <div class="secondPlane hiddenPlane" id="secondPlane"></div>
+            <br>
+            <div class="thirdPlane hiddenPlane" id="thirdPlane"></div>
+
+
+          </div>
+        </div>
+      </section>
+      <section class="container">
+        <div class="experience-outdoors">
+          <div class="title-heading">
+            <h3 class="dest">Choose your standard:</h3>
+
+          </div>
+          <div class="activities-grid">
+            <!-- grid item #1 -->
+            <div class="activities-grid-item first-dest">
+              <h4>Extra Luggage</h4>
+              <p id="first-trip"></p>
+              <p>20kg extra luggage</p>
+              <p>+20PLN</p>
+              <button onclick="btnEconomyPassengerMinus()">-</button><input type="number"
+                onchange="getMaxSeats('numberOfEconomyPassengers')" id="numberOfEconomyPassengers" value='0' min=0
+                max=9><button onclick="btnEconomyPassengerPlus()">+</button>
+              <button id="btnEconomy">Choose</button>
+
+            </div>
+            <!-- grid item #2 -->
+            <div class="activities-grid-item second-dest">
+              <h4>Fast Lane</h4>
+              <p id="first-trip"></p>
+
+              <p>Priority boarding</p>
+              <p>+50PLN</p>
+
+              <button onclick="btnPremiumEconomyPassengerMinus()">-</button><input type="number"
+                id="numberOfPremiumEconomyPassengers" value='0'
+                onchange="getMaxSeats('numberOfPremiumEconomyPassengers')" min=0 max=9><button
+                onclick="btnPremiumEconomyPassengerPlus()">+</button>
+
+              <button id="btnPremiumEconomy">Choose</button>
+
+            </div>
+            <!-- grid item #3 -->
+            <div class="activities-grid-item third">
+              <h4>Extra Luggage + Fast Lane</h4>
+              <p id="first-trip"></p>
+
+              <p>20kg extra luggage + Priority boarding</p>
+              <p>+70PLN</p>
+
+              <button onclick="btnBusinessPassengerMinus()">-</button><input type="number"
+                id="numberOfBusinessPassengers" onchange="getMaxSeats('numberOfBusinessPassengers')" value='0' min=0
+                max=9><button onclick="btnBusinessPassengerPlus()">+</button>
+
+              <button id="btnBusiness">Choose</button>
+
+
+            </div>
+          </div>
+      </section>
+
+      <section>
+      </section>
+      <section>
+        <h1 class="dest">Summary</h1>
+        <h4 id="destinationSummary"></h4>
+        <h4 id="dateSummary"></h4>
+        <h4 id="hoursSummary"></h4>
+        <h4 id="priceSummary"></h4>
+        <h4 id="totalPrice"></h4>
+        <h4 id="extraLuggageSummary"></h4>
+        <h4 id="fastLaneSummary"></h4>
+        <h4 id="luggageLaneSummary"></h4>
+
+      </section>
+    </div>
+
+    </div>
+
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <script src="./../js/func.js"></script>
+</body>
+
+</html>

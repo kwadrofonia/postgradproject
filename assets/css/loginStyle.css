@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Code Pro', monospace;
+}
+
+
+.main-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 70%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    background-size: cover; 
+    z-index: 1;
+} 
+
+.image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 70%;
+    background-color: #717C89;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    background: url("plane.jpg");
+    background-size: cover;
+    opacity: 0.25; 
+} 
+
+
+.content {
+    text-align: center;
+    font-weight: bold;
+    background-size: cover;
+    padding: 1.5rem;
+}
+
+.login-form {
+    padding: 5rem;
+    color: black;
+    position: relative;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+    text-align: center;
+}
+
+li {
+    list-style: none;
+}
+
+.form-control {
+    margin: 0rem auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .content {
+        display: flex;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        text-align: center;
+        font-weight: bold;
+    }
+    .info {
+        display: none;
+    }
+    .login-form {
+        position: relative;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 1;
+        padding: 1rem;
+    }
+}
+
