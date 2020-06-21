@@ -14,7 +14,7 @@
    });
 
    
-   fetch("airports_local.json")
+   fetch('airports_local.json')
       .then((resp) => resp.json()) 
       .then(function (data) {
          data.forEach(function (element) {

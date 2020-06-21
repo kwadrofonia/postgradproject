@@ -5,7 +5,7 @@ const loginUser = () => {
        password: password,
        username: username
     }
-    fetch('http://localhost:3000/login', {
+    fetch('http://localhost:3000', {
        method: 'POST',
        body: JSON.stringify(data),
        mode: 'cors',
@@ -18,7 +18,7 @@ const loginUser = () => {
        referrerPolicy: 'no-referrer'
     })
     .then( res=> {
-       window.location.href = "http://127.0.0.1:5501/booking.html";
+       window.location.href = "http://localhost:3000/booking";
     })
     .catch(err=> {
        console.log(err);

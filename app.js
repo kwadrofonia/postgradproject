@@ -1,15 +1,13 @@
 const bodyparser = require("body-parser"); 
 const express = require("express"); 
 const app = express(); 
-const PORT = process.env.PORT || 3000; 
 const cors = require('cors'); 
 const fs = require('fs');
 const session = require('express-session');
 
 
 
-// app.use(cors({origin:['http://127.0.0.1:5501'], credentials:true}))
-app.use(cors({origin:['localhost:3000'], credentials:true}))
+app.use(cors({origin:['http://localhost:3000'], credentials:true}))
 
 app.use(bodyparser.json());
 app.use(session({
@@ -52,7 +50,7 @@ let users;
       if(el.email === req.body.username && el.password === req.body.password) {
       console.log(`${el.email} - ${req.body.username} |||  ${req.body.password} - ${req.body.password}`)
         isLogged = true;
-        console.log('zgadza sie');
+        console.log('correct data');
       }
      })
      if(isLogged){
